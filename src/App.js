@@ -1,13 +1,16 @@
-import Exercise1 from "./react-hooks/Exercise1";
+//import Exercise1 from "./react-hooks/Exercise1";
+import Exercise2 from "./react-hooks/Exercise2";
+
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Curso Epic React</h1>
+      <h1 className="title">Curso Epic React</h1>
       {/* Instanciar aqui os Exercicios para validação */}
 
-      <Exercise1 />
+      {/* <Exercise1 /> */}
+      <Exercise2 />
     </div>
   );
 }
