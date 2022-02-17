@@ -5,6 +5,8 @@ export default function App() {
   return (
     <div className="App">
       <h1>Curso Epic React</h1>
+      {/* Instanciar aqui os Exercicios para validação */}
+
       <Exercise1 />
     </div>
   );

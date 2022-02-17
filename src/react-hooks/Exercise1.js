@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function Greeting() {
-  const [name, setName] = useState();
+function Greeting({ initialValue = "" }) {
+  const [name, setName] = useState(initialValue);
 
   function handleChange(event) {
     setName(event.target.value);
@@ -19,7 +19,7 @@ function Greeting() {
 }
 
 function Exercise1() {
-  return <Greeting />;
+  return <Greeting initialValue />;
 }
 
 export default Exercise1;
