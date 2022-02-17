@@ -9,9 +9,10 @@ function Greeting({ initialValue = "" }) {
 
   return (
     <div>
+      <strong>Uso do Hook useState</strong>
       <form>
         <label htmlFor="name">Name: </label>
-        <input onChange={handleChange} id="name" />
+        <input value={name} onChange={handleChange} id="name" />
       </form>
       {name ? <strong>Hello {name}</strong> : "Please type your name"}
     </div>
@@ -19,7 +20,7 @@ function Greeting({ initialValue = "" }) {
 }
 
 function Exercise1() {
-  return <Greeting initialValue />;
+  return <Greeting />;
 }
 
 export default Exercise1;
