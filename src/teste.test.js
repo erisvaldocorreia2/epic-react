@@ -5,9 +5,4 @@ describe("Inicializando processos de testes", () => {
   test("este teste irá passar normalmente", () => {
     expect(1 + 1).toBe(2);
   });
-
-  test("forçando teste a falhar", () => {
-    // Descomentar para verificação do erro forçado
-    //expect(1 + 1).toBe(4);
-  });
 });
