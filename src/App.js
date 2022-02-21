@@ -7,7 +7,9 @@ import "./styles.css";
 export default function App() {
   return (
     <div className="App">
-      <h1 className="title">Curso Epic React</h1>
+      <h1 className="title" data-testid="test-title">
+        Curso Epic React
+      </h1>
       {/* Instanciar aqui os Exercicios para validação */}
 
       {/* <Exercise1 /> */}
