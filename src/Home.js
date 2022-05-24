@@ -14,6 +14,10 @@ export default function Home() {
         <Link to="/exe3">Exercicio 3 - useStates</Link>
         <br />
       </div>
+      <div>
+        <h3>Advanced Hooks</h3>
+        <p>Em desenvolvimento</p>
+      </div>
     </div>
   );
 }

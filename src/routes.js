@@ -11,9 +11,7 @@ function Routes() {
     <BrowserRouter>
       <Switch>
         <Route component={Home} path="/" exact />
-        <Route path="/exe1">
-          <Exercise1 />
-        </Route>
+        <Route component={Exercise1} path="/exe1" />
         <Route component={Exercise2} path="/exe2" />
         <Route component={Exercise3} path="/exe3" />
       </Switch>
