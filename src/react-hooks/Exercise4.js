@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useLocalStorageState } from "./util";
 
 const initialValues = Array(9).fill(null);
 const KEYSTORE = "squaresTicTacToe";
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
-  const [squares, setSquares] = useState(
-    () => JSON.parse(window.localStorage.getItem(KEYSTORE)) || initialValues
-  );
 
-  useEffect(() => {
-    window.localStorage.setItem(KEYSTORE, JSON.stringify(squares));
-  }, [squares]);
+  // Usando localStorage localmente
+  //const [squares, setSquares] = useState(
+  //() => JSON.parse(window.localStorage.getItem(KEYSTORE)) || initialValues
+  //);
+
+  //useEffect(() => {
+  //window.localStorage.setItem(KEYSTORE, JSON.stringify(squares));
+  //}, [squares]);
+
+  //Usando o customHook de localStorage
+  const [squares, setSquares] = useLocalStorageState(KEYSTORE, initialValues);
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
