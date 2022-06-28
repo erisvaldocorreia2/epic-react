@@ -1,13 +1,25 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+
+const initialValues = Array(9).fill(null);
+const KEYSTORE = "squaresTicTacToe";
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
-  const squares = Array(9).fill(null);
+  const [squares, setSquares] = useState(
+    () => JSON.parse(window.localStorage.getItem(KEYSTORE)) || initialValues
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem(KEYSTORE, JSON.stringify(squares));
+  }, [squares]);
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
   // - winner ('X', 'O', or null)
   // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
+  const nextValue = calculateNextValue(squares);
+  const winner = calculateWinner(squares);
+  const status = calculateStatus(winner, squares, nextValue);
   // 💰 I've written the calculations for you! So you can use my utilities
   // below to create these variables
 
@@ -28,11 +40,19 @@ function Board() {
     // 💰 `squaresCopy[square] = nextValue`
     //
     // 🐨 set the squares to your copy
+
+    if (winner || squares[square]) {
+      return;
+    }
+    const squaresCopy = [...squares];
+    squaresCopy[square] = nextValue;
+    setSquares(squaresCopy);
   }
 
   function restart() {
     // 🐨 reset the squares
     // 💰 `Array(9).fill(null)` will do it!
+    setSquares(initialValues);
   }
 
   function renderSquare(i) {
@@ -46,7 +66,7 @@ function Board() {
   return (
     <div>
       {/* 🐨 put the status in the div below */}
-      <div className="status">STATUS</div>
+      <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
