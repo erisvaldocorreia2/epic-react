@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles.css";
 
 export default function Home() {
   return (
@@ -12,6 +11,8 @@ export default function Home() {
         <Link to="/exe2">Exercicio 2 - useEffect e LocalStorage</Link>
         <br />
         <Link to="/exe3">Exercicio 3 - useStates</Link>
+        <br />
+        <Link to="/exe4">Exercicio 4 - useStates Tic Tac Toe</Link>
         <br />
       </div>
       <div>
